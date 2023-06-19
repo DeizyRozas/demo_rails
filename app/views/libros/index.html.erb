@@ -1,0 +1,49 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Libros</h1>
+
+<%= link_to "Crear nuevo libro", new_libro_path %>
+<hr>
+
+<div id="libros"> 
+
+    <!-- Table -->
+    <section>        
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Páginas</th>
+                        <th>Precio</th>
+                        <th>Editar</th>
+                        <th>Borrar</th>
+                        <th>Show</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @libros.each do |libro| %>
+                        <tr>
+                            <td><%= libro.id %></td>
+                            <td><%= libro.nombre %></td>
+                            <td><%= libro.descripcion %></td>
+                            <td><%= libro.paginas %></td>
+                            <td><%= libro.precio %></td>
+                            <td><%= link_to "Edit this libro", edit_libro_path(libro) %></td>
+                            <td><%= button_to "Destroy this libro", libro, method: :delete %></td>
+                            <td><%= link_to "Show this libro", libro %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+</div>
+
+
+
+

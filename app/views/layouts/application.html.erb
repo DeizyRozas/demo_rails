@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <!--CSS -->
+    <%= stylesheet_link_tag 'fontawesome-all.min', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'noscript', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_importmap_tags %>
+
+
+  </head>
+
+  <body class="is-preload">
+    <div id="wrapper">
+      <%= render 'shared/header' %>
+      <%= render 'shared/menu' %>
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </div>
+    <%= javascript_include_tag "breakpoints.min" %>
+    <%= javascript_include_tag "browser.min" %>
+    <%= javascript_include_tag "jquery.min" %>
+    <%= javascript_include_tag "main" %>
+    <%= javascript_include_tag "util" %>
+
+  </body>
+</html>
